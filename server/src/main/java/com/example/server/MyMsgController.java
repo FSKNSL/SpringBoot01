@@ -18,4 +18,5 @@ public class MyMsgController {
 //        作为客户端使用,访问service中的内容
         return  restTemplate.getForObject(URLPREFIX+"/test/msg",Message.class);
     }
+
 }
