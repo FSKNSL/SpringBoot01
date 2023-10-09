@@ -3,6 +3,10 @@ package com.example.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dao.RedDetailDao;
+import dao.RedRecordDao;
+import model.RedRecord;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -120,8 +124,12 @@ public class MessageController {
         /*返回一个列表*/
     }
 
-
-
-
+   @Autowired(required = false)
+    private RedRecordDao redRecordDao;
+    @RequestMapping("test/red")
+    public RedRecord redRecord()
+    {
+        return redRecordDao.selectByPrimaryKey(12);
+    }
 }
 
