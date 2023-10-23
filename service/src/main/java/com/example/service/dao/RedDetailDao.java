@@ -1,8 +1,8 @@
-package dao;
+package com.example.service.dao;
 
 import java.util.List;
-import model.RedDetail;
-import model.RedDetailExample;
+import com.example.service.model.RedDetail;
+import com.example.service.model.RedDetailExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface RedDetailDao {

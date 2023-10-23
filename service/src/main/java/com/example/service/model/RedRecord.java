@@ -1,37 +1,39 @@
-package model;
+package com.example.service.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * red_rob_record
+ * red_record
  * @author 
  */
-public class RedRobRecord implements Serializable {
+public class RedRecord implements Serializable {
     private Integer id;
 
     /**
-     * 用户账号
+     * 用户id
      */
     private Integer userId;
 
     /**
-     * 红包标识串
+     * 红包全局唯一标识符
      */
     private String redPacket;
 
     /**
-     * 红包金额（单位为分）
+     * 人数
+     */
+    private Integer total;
+
+    /**
+     * 总金额（单位为分）
      */
     private BigDecimal amount;
 
-    /**
-     * 时间
-     */
-    private Date robTime;
-
     private Byte isActive;
+
+    private Date createTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -59,6 +61,14 @@ public class RedRobRecord implements Serializable {
         this.redPacket = redPacket;
     }
 
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     public BigDecimal getAmount() {
         return amount;
     }
@@ -67,20 +77,20 @@ public class RedRobRecord implements Serializable {
         this.amount = amount;
     }
 
-    public Date getRobTime() {
-        return robTime;
-    }
-
-    public void setRobTime(Date robTime) {
-        this.robTime = robTime;
-    }
-
     public Byte getIsActive() {
         return isActive;
     }
 
     public void setIsActive(Byte isActive) {
         this.isActive = isActive;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
@@ -94,13 +104,14 @@ public class RedRobRecord implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        RedRobRecord other = (RedRobRecord) that;
+        RedRecord other = (RedRecord) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getRedPacket() == null ? other.getRedPacket() == null : this.getRedPacket().equals(other.getRedPacket()))
+            && (this.getTotal() == null ? other.getTotal() == null : this.getTotal().equals(other.getTotal()))
             && (this.getAmount() == null ? other.getAmount() == null : this.getAmount().equals(other.getAmount()))
-            && (this.getRobTime() == null ? other.getRobTime() == null : this.getRobTime().equals(other.getRobTime()))
-            && (this.getIsActive() == null ? other.getIsActive() == null : this.getIsActive().equals(other.getIsActive()));
+            && (this.getIsActive() == null ? other.getIsActive() == null : this.getIsActive().equals(other.getIsActive()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
     @Override
@@ -110,9 +121,10 @@ public class RedRobRecord implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getRedPacket() == null) ? 0 : getRedPacket().hashCode());
+        result = prime * result + ((getTotal() == null) ? 0 : getTotal().hashCode());
         result = prime * result + ((getAmount() == null) ? 0 : getAmount().hashCode());
-        result = prime * result + ((getRobTime() == null) ? 0 : getRobTime().hashCode());
         result = prime * result + ((getIsActive() == null) ? 0 : getIsActive().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
 
@@ -125,9 +137,10 @@ public class RedRobRecord implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", userId=").append(userId);
         sb.append(", redPacket=").append(redPacket);
+        sb.append(", total=").append(total);
         sb.append(", amount=").append(amount);
-        sb.append(", robTime=").append(robTime);
         sb.append(", isActive=").append(isActive);
+        sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

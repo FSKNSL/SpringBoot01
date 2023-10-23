@@ -1,11 +1,11 @@
-package model;
+package com.example.service.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class RedDetailExample {
+public class RedRobRecordExample {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -16,7 +16,7 @@ public class RedDetailExample {
 
     private Long offset;
 
-    public RedDetailExample() {
+    public RedRobRecordExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -186,63 +186,133 @@ public class RedDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdIsNull() {
-            addCriterion("record_id is null");
+        public Criteria andUserIdIsNull() {
+            addCriterion("user_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdIsNotNull() {
-            addCriterion("record_id is not null");
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("user_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdEqualTo(Integer value) {
-            addCriterion("record_id =", value, "recordId");
+        public Criteria andUserIdEqualTo(Integer value) {
+            addCriterion("user_id =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdNotEqualTo(Integer value) {
-            addCriterion("record_id <>", value, "recordId");
+        public Criteria andUserIdNotEqualTo(Integer value) {
+            addCriterion("user_id <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdGreaterThan(Integer value) {
-            addCriterion("record_id >", value, "recordId");
+        public Criteria andUserIdGreaterThan(Integer value) {
+            addCriterion("user_id >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("record_id >=", value, "recordId");
+        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("user_id >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdLessThan(Integer value) {
-            addCriterion("record_id <", value, "recordId");
+        public Criteria andUserIdLessThan(Integer value) {
+            addCriterion("user_id <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdLessThanOrEqualTo(Integer value) {
-            addCriterion("record_id <=", value, "recordId");
+        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
+            addCriterion("user_id <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdIn(List<Integer> values) {
-            addCriterion("record_id in", values, "recordId");
+        public Criteria andUserIdIn(List<Integer> values) {
+            addCriterion("user_id in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdNotIn(List<Integer> values) {
-            addCriterion("record_id not in", values, "recordId");
+        public Criteria andUserIdNotIn(List<Integer> values) {
+            addCriterion("user_id not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdBetween(Integer value1, Integer value2) {
-            addCriterion("record_id between", value1, value2, "recordId");
+        public Criteria andUserIdBetween(Integer value1, Integer value2) {
+            addCriterion("user_id between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andRecordIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("record_id not between", value1, value2, "recordId");
+        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("user_id not between", value1, value2, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketIsNull() {
+            addCriterion("red_packet is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketIsNotNull() {
+            addCriterion("red_packet is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketEqualTo(String value) {
+            addCriterion("red_packet =", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketNotEqualTo(String value) {
+            addCriterion("red_packet <>", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketGreaterThan(String value) {
+            addCriterion("red_packet >", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketGreaterThanOrEqualTo(String value) {
+            addCriterion("red_packet >=", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketLessThan(String value) {
+            addCriterion("red_packet <", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketLessThanOrEqualTo(String value) {
+            addCriterion("red_packet <=", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketLike(String value) {
+            addCriterion("red_packet like", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketNotLike(String value) {
+            addCriterion("red_packet not like", value, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketIn(List<String> values) {
+            addCriterion("red_packet in", values, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketNotIn(List<String> values) {
+            addCriterion("red_packet not in", values, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketBetween(String value1, String value2) {
+            addCriterion("red_packet between", value1, value2, "redPacket");
+            return (Criteria) this;
+        }
+
+        public Criteria andRedPacketNotBetween(String value1, String value2) {
+            addCriterion("red_packet not between", value1, value2, "redPacket");
             return (Criteria) this;
         }
 
@@ -306,6 +376,66 @@ public class RedDetailExample {
             return (Criteria) this;
         }
 
+        public Criteria andRobTimeIsNull() {
+            addCriterion("rob_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeIsNotNull() {
+            addCriterion("rob_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeEqualTo(Date value) {
+            addCriterion("rob_time =", value, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeNotEqualTo(Date value) {
+            addCriterion("rob_time <>", value, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeGreaterThan(Date value) {
+            addCriterion("rob_time >", value, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("rob_time >=", value, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeLessThan(Date value) {
+            addCriterion("rob_time <", value, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeLessThanOrEqualTo(Date value) {
+            addCriterion("rob_time <=", value, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeIn(List<Date> values) {
+            addCriterion("rob_time in", values, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeNotIn(List<Date> values) {
+            addCriterion("rob_time not in", values, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeBetween(Date value1, Date value2) {
+            addCriterion("rob_time between", value1, value2, "robTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRobTimeNotBetween(Date value1, Date value2) {
+            addCriterion("rob_time not between", value1, value2, "robTime");
+            return (Criteria) this;
+        }
+
         public Criteria andIsActiveIsNull() {
             addCriterion("is_active is null");
             return (Criteria) this;
@@ -363,66 +493,6 @@ public class RedDetailExample {
 
         public Criteria andIsActiveNotBetween(Byte value1, Byte value2) {
             addCriterion("is_active not between", value1, value2, "isActive");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIsNull() {
-            addCriterion("create_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIsNotNull() {
-            addCriterion("create_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeEqualTo(Date value) {
-            addCriterion("create_time =", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotEqualTo(Date value) {
-            addCriterion("create_time <>", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeGreaterThan(Date value) {
-            addCriterion("create_time >", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("create_time >=", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeLessThan(Date value) {
-            addCriterion("create_time <", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("create_time <=", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIn(List<Date> values) {
-            addCriterion("create_time in", values, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotIn(List<Date> values) {
-            addCriterion("create_time not in", values, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeBetween(Date value1, Date value2) {
-            addCriterion("create_time between", value1, value2, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("create_time not between", value1, value2, "createTime");
             return (Criteria) this;
         }
     }

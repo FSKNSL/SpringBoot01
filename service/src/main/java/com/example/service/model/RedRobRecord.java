@@ -1,29 +1,37 @@
-package model;
+package com.example.service.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * red_detail
+ * red_rob_record
  * @author 
  */
-public class RedDetail implements Serializable {
+public class RedRobRecord implements Serializable {
     private Integer id;
 
     /**
-     * 红包记录id
+     * 用户账号
      */
-    private Integer recordId;
+    private Integer userId;
 
     /**
-     * 金额（单位为分）
+     * 红包标识串
+     */
+    private String redPacket;
+
+    /**
+     * 红包金额（单位为分）
      */
     private BigDecimal amount;
 
-    private Byte isActive;
+    /**
+     * 时间
+     */
+    private Date robTime;
 
-    private Date createTime;
+    private Byte isActive;
 
     private static final long serialVersionUID = 1L;
 
@@ -35,12 +43,20 @@ public class RedDetail implements Serializable {
         this.id = id;
     }
 
-    public Integer getRecordId() {
-        return recordId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setRecordId(Integer recordId) {
-        this.recordId = recordId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getRedPacket() {
+        return redPacket;
+    }
+
+    public void setRedPacket(String redPacket) {
+        this.redPacket = redPacket;
     }
 
     public BigDecimal getAmount() {
@@ -51,20 +67,20 @@ public class RedDetail implements Serializable {
         this.amount = amount;
     }
 
+    public Date getRobTime() {
+        return robTime;
+    }
+
+    public void setRobTime(Date robTime) {
+        this.robTime = robTime;
+    }
+
     public Byte getIsActive() {
         return isActive;
     }
 
     public void setIsActive(Byte isActive) {
         this.isActive = isActive;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
     }
 
     @Override
@@ -78,12 +94,13 @@ public class RedDetail implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        RedDetail other = (RedDetail) that;
+        RedRobRecord other = (RedRobRecord) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getRecordId() == null ? other.getRecordId() == null : this.getRecordId().equals(other.getRecordId()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getRedPacket() == null ? other.getRedPacket() == null : this.getRedPacket().equals(other.getRedPacket()))
             && (this.getAmount() == null ? other.getAmount() == null : this.getAmount().equals(other.getAmount()))
-            && (this.getIsActive() == null ? other.getIsActive() == null : this.getIsActive().equals(other.getIsActive()))
-            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
+            && (this.getRobTime() == null ? other.getRobTime() == null : this.getRobTime().equals(other.getRobTime()))
+            && (this.getIsActive() == null ? other.getIsActive() == null : this.getIsActive().equals(other.getIsActive()));
     }
 
     @Override
@@ -91,10 +108,11 @@ public class RedDetail implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getRecordId() == null) ? 0 : getRecordId().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getRedPacket() == null) ? 0 : getRedPacket().hashCode());
         result = prime * result + ((getAmount() == null) ? 0 : getAmount().hashCode());
+        result = prime * result + ((getRobTime() == null) ? 0 : getRobTime().hashCode());
         result = prime * result + ((getIsActive() == null) ? 0 : getIsActive().hashCode());
-        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
 
@@ -105,10 +123,11 @@ public class RedDetail implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", recordId=").append(recordId);
+        sb.append(", userId=").append(userId);
+        sb.append(", redPacket=").append(redPacket);
         sb.append(", amount=").append(amount);
+        sb.append(", robTime=").append(robTime);
         sb.append(", isActive=").append(isActive);
-        sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

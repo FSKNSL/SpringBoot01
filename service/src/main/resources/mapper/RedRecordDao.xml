@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.RedRecordDao">
-  <resultMap id="BaseResultMap" type="model.RedRecord">
+<mapper namespace="com.example.service.dao.RedRecordDao">
+  <resultMap id="BaseResultMap" type="com.example.service.model.RedRecord">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="red_packet" jdbcType="VARCHAR" property="redPacket" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List">
     id, user_id, red_packet, total, amount, is_active, create_time
   </sql>
-  <select id="selectByExample" parameterType="model.RedRecordExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.service.model.RedRecordExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -103,13 +103,13 @@
     delete from red_record
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="model.RedRecordExample">
+  <delete id="deleteByExample" parameterType="com.example.service.model.RedRecordExample">
     delete from red_record
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="model.RedRecord" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.service.model.RedRecord" useGeneratedKeys="true">
     insert into red_record (user_id, red_packet, total, 
       amount, is_active, create_time
       )
@@ -117,7 +117,7 @@
       #{amount,jdbcType=DECIMAL}, #{isActive,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="model.RedRecord" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.service.model.RedRecord" useGeneratedKeys="true">
     insert into red_record
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
@@ -160,7 +160,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="model.RedRecordExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.service.model.RedRecordExample" resultType="java.lang.Long">
     select count(*) from red_record
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -208,7 +208,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="model.RedRecord">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.service.model.RedRecord">
     update red_record
     <set>
       <if test="userId != null">
@@ -232,7 +232,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="model.RedRecord">
+  <update id="updateByPrimaryKey" parameterType="com.example.service.model.RedRecord">
     update red_record
     set user_id = #{userId,jdbcType=INTEGER},
       red_packet = #{redPacket,jdbcType=VARCHAR},

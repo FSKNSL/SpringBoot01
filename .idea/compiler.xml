@@ -16,7 +16,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="server" options="-parameters" />
-      <module name="service" options="-parameters" />
+      <module name="service" options="-parameters -bootclasspath &quot;D:/Program Files/Java/jdk1.8.0_131/jre\lib\rt.jar;D:/Program Files/Java/jdk1.8.0_131/jre\lib\jce.jar&quot; -Xlint:deprecation" />
     </option>
   </component>
 </project>

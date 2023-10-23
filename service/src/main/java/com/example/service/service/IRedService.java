@@ -1,6 +1,6 @@
-package service;
+package com.example.service.service;
 
-import dto.RedPacketDto;
+import com.example.service.dto.RedPacketDto;
 
 import java.math.BigDecimal;
 import java.util.List;

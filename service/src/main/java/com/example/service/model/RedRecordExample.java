@@ -1,11 +1,11 @@
-package model;
+package com.example.service.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class RedRobRecordExample {
+public class RedRecordExample {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -16,7 +16,7 @@ public class RedRobRecordExample {
 
     private Long offset;
 
-    public RedRobRecordExample() {
+    public RedRecordExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -316,6 +316,66 @@ public class RedRobRecordExample {
             return (Criteria) this;
         }
 
+        public Criteria andTotalIsNull() {
+            addCriterion("total is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIsNotNull() {
+            addCriterion("total is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalEqualTo(Integer value) {
+            addCriterion("total =", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotEqualTo(Integer value) {
+            addCriterion("total <>", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalGreaterThan(Integer value) {
+            addCriterion("total >", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalGreaterThanOrEqualTo(Integer value) {
+            addCriterion("total >=", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalLessThan(Integer value) {
+            addCriterion("total <", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalLessThanOrEqualTo(Integer value) {
+            addCriterion("total <=", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIn(List<Integer> values) {
+            addCriterion("total in", values, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotIn(List<Integer> values) {
+            addCriterion("total not in", values, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalBetween(Integer value1, Integer value2) {
+            addCriterion("total between", value1, value2, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotBetween(Integer value1, Integer value2) {
+            addCriterion("total not between", value1, value2, "total");
+            return (Criteria) this;
+        }
+
         public Criteria andAmountIsNull() {
             addCriterion("amount is null");
             return (Criteria) this;
@@ -376,66 +436,6 @@ public class RedRobRecordExample {
             return (Criteria) this;
         }
 
-        public Criteria andRobTimeIsNull() {
-            addCriterion("rob_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeIsNotNull() {
-            addCriterion("rob_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeEqualTo(Date value) {
-            addCriterion("rob_time =", value, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeNotEqualTo(Date value) {
-            addCriterion("rob_time <>", value, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeGreaterThan(Date value) {
-            addCriterion("rob_time >", value, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("rob_time >=", value, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeLessThan(Date value) {
-            addCriterion("rob_time <", value, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeLessThanOrEqualTo(Date value) {
-            addCriterion("rob_time <=", value, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeIn(List<Date> values) {
-            addCriterion("rob_time in", values, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeNotIn(List<Date> values) {
-            addCriterion("rob_time not in", values, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeBetween(Date value1, Date value2) {
-            addCriterion("rob_time between", value1, value2, "robTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andRobTimeNotBetween(Date value1, Date value2) {
-            addCriterion("rob_time not between", value1, value2, "robTime");
-            return (Criteria) this;
-        }
-
         public Criteria andIsActiveIsNull() {
             addCriterion("is_active is null");
             return (Criteria) this;
@@ -493,6 +493,66 @@ public class RedRobRecordExample {
 
         public Criteria andIsActiveNotBetween(Byte value1, Byte value2) {
             addCriterion("is_active not between", value1, value2, "isActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("create_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("create_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("create_time =", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("create_time <>", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("create_time >", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("create_time >=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("create_time <", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("create_time <=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("create_time in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("create_time not in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("create_time between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("create_time not between", value1, value2, "createTime");
             return (Criteria) this;
         }
     }

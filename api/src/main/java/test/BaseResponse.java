@@ -1,6 +1,8 @@
 package test;
 
-public class BaseResponse<T> {
+import java.io.Serializable;
+
+public class BaseResponse<T> implements Serializable {
     private Integer code;//状态码
     private String msg;//描述信息
     private T data;/*响应数据*/
@@ -46,5 +48,12 @@ public class BaseResponse<T> {
         this.data=data;
     }
 
-
+    @Override
+    public String toString() {
+        return "BaseResponse{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }

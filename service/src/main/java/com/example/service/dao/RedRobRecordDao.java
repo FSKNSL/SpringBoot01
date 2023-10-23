@@ -1,8 +1,9 @@
-package dao;
+package com.example.service.dao;
 
 import java.util.List;
-import model.RedRobRecord;
-import model.RedRobRecordExample;
+
+import com.example.service.model.RedRobRecord;
+import com.example.service.model.RedRobRecordExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface RedRobRecordDao {

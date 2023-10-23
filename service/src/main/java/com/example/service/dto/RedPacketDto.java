@@ -1,4 +1,5 @@
-package dto;
+package com.example.service.dto;
+
 
 import com.sun.istack.internal.NotNull;
 import lombok.Data;

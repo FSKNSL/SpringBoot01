@@ -1,4 +1,4 @@
-package utils;
+package com.example.service.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,9 @@ public class RedPacketUtil {
             Random random=new Random();
             for(int i=0;i<totalPeopleNum-1;i++)
             {
-              int amount=random.nextInt(restAmount/restPeopleNum*2-1)+1;
+           /*   int amount=random.nextInt(restAmount/restPeopleNum*2-1)+1;*/
+                int amount = Math.abs(random.nextInt(restAmount / restPeopleNum * 2 - 1)+ 1) ;
+
                 restAmount-=amount;
                 restPeopleNum--;
                 amountList.add(amount);

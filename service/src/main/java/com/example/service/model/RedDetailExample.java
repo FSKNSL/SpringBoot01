@@ -1,11 +1,11 @@
-package model;
+package com.example.service.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class RedRecordExample {
+public class RedDetailExample {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -16,7 +16,7 @@ public class RedRecordExample {
 
     private Long offset;
 
-    public RedRecordExample() {
+    public RedDetailExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -186,193 +186,63 @@ public class RedRecordExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNull() {
-            addCriterion("user_id is null");
+        public Criteria andRecordIdIsNull() {
+            addCriterion("record_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNotNull() {
-            addCriterion("user_id is not null");
+        public Criteria andRecordIdIsNotNull() {
+            addCriterion("record_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdEqualTo(Integer value) {
-            addCriterion("user_id =", value, "userId");
+        public Criteria andRecordIdEqualTo(Integer value) {
+            addCriterion("record_id =", value, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotEqualTo(Integer value) {
-            addCriterion("user_id <>", value, "userId");
+        public Criteria andRecordIdNotEqualTo(Integer value) {
+            addCriterion("record_id <>", value, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThan(Integer value) {
-            addCriterion("user_id >", value, "userId");
+        public Criteria andRecordIdGreaterThan(Integer value) {
+            addCriterion("record_id >", value, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("user_id >=", value, "userId");
+        public Criteria andRecordIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("record_id >=", value, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThan(Integer value) {
-            addCriterion("user_id <", value, "userId");
+        public Criteria andRecordIdLessThan(Integer value) {
+            addCriterion("record_id <", value, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
-            addCriterion("user_id <=", value, "userId");
+        public Criteria andRecordIdLessThanOrEqualTo(Integer value) {
+            addCriterion("record_id <=", value, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIn(List<Integer> values) {
-            addCriterion("user_id in", values, "userId");
+        public Criteria andRecordIdIn(List<Integer> values) {
+            addCriterion("record_id in", values, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotIn(List<Integer> values) {
-            addCriterion("user_id not in", values, "userId");
+        public Criteria andRecordIdNotIn(List<Integer> values) {
+            addCriterion("record_id not in", values, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdBetween(Integer value1, Integer value2) {
-            addCriterion("user_id between", value1, value2, "userId");
+        public Criteria andRecordIdBetween(Integer value1, Integer value2) {
+            addCriterion("record_id between", value1, value2, "recordId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("user_id not between", value1, value2, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketIsNull() {
-            addCriterion("red_packet is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketIsNotNull() {
-            addCriterion("red_packet is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketEqualTo(String value) {
-            addCriterion("red_packet =", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketNotEqualTo(String value) {
-            addCriterion("red_packet <>", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketGreaterThan(String value) {
-            addCriterion("red_packet >", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketGreaterThanOrEqualTo(String value) {
-            addCriterion("red_packet >=", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketLessThan(String value) {
-            addCriterion("red_packet <", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketLessThanOrEqualTo(String value) {
-            addCriterion("red_packet <=", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketLike(String value) {
-            addCriterion("red_packet like", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketNotLike(String value) {
-            addCriterion("red_packet not like", value, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketIn(List<String> values) {
-            addCriterion("red_packet in", values, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketNotIn(List<String> values) {
-            addCriterion("red_packet not in", values, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketBetween(String value1, String value2) {
-            addCriterion("red_packet between", value1, value2, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andRedPacketNotBetween(String value1, String value2) {
-            addCriterion("red_packet not between", value1, value2, "redPacket");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalIsNull() {
-            addCriterion("total is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalIsNotNull() {
-            addCriterion("total is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalEqualTo(Integer value) {
-            addCriterion("total =", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalNotEqualTo(Integer value) {
-            addCriterion("total <>", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalGreaterThan(Integer value) {
-            addCriterion("total >", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalGreaterThanOrEqualTo(Integer value) {
-            addCriterion("total >=", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalLessThan(Integer value) {
-            addCriterion("total <", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalLessThanOrEqualTo(Integer value) {
-            addCriterion("total <=", value, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalIn(List<Integer> values) {
-            addCriterion("total in", values, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalNotIn(List<Integer> values) {
-            addCriterion("total not in", values, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalBetween(Integer value1, Integer value2) {
-            addCriterion("total between", value1, value2, "total");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalNotBetween(Integer value1, Integer value2) {
-            addCriterion("total not between", value1, value2, "total");
+        public Criteria andRecordIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("record_id not between", value1, value2, "recordId");
             return (Criteria) this;
         }
 
