@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.service.rabbitmq.publisher.BasicPublisher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.example.service.dao.RedRecordDao;
@@ -19,6 +20,13 @@ import java.util.Set;
 
 @RestController
 public class MessageController {
+    @Autowired
+    private BasicPublisher basicPublisher;
+    @RequestMapping("/mq/send")
+    public String basicSend(){
+        basicPublisher.sendMessage("alskdfjopqw84usoadfh");
+        return "Send ok.";
+    }
     @RequestMapping("/test/msg")
     public Message helloMsg()
     {
