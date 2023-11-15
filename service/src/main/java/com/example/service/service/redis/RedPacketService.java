@@ -1,10 +1,17 @@
 package com.example.service.service.redis;
 
+import com.example.service.model.Msg;
 import com.example.service.service.IRedPacketService;
 import com.example.service.dto.RedPacketDto;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageBuilder;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
@@ -30,6 +37,14 @@ public class RedPacketService  implements IRedPacketService
     @Autowired
     private IRedService redService;
     /*发红包*/
+
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+    @Autowired
+    private Environment env;
+    @Autowired
+    private ObjectMapper objectMapper;
     @Override
     public String handOut(RedPacketDto dto)throws Exception
     {
@@ -137,10 +152,32 @@ public class RedPacketService  implements IRedPacketService
                 /*打印当前用户抢到红包的信息*/
                         log.info("当前用户抢到红包了:userId={} key={} 金额={}",userId,redId,result);
                 /*将结果返回*/
+                       Msg message=new Msg();
+                        message.setRedId(redId);
+                        message.setUserId(userId);
+                        message.setResult(result);
+                        if(message!=null)
+                        {
+                            try{
+                                rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
+                                rabbitTemplate.setExchange(env.getProperty("mq.direct.exchange.name"));
+                                rabbitTemplate.setRoutingKey(env.getProperty("mq.direct.routing.key.one.name"));
+                                Message msg= MessageBuilder.withBody(objectMapper.writeValueAsBytes(message)).build();
+                                rabbitTemplate.convertAndSend(msg);
+                                log.info("基于消息模型DirectExchange-抢红包成功-发送消息:{}",msg);
+
+                            }catch(Exception e)
+                            {
+                                log.error("基于消息模型DirectExchange-抢红包成功--发送消息发生异常:{}",message,e.fillInStackTrace());
+                            }
+                        }
+
+                        /*发送成功消息到队列中*/
                         return result;
                 }}
             }catch(Exception e)
             {
+                /*fa送失败消息到队列中*/
                 throw new Exception("系统异常-抢红包-加分布式锁失败!");
             }
 

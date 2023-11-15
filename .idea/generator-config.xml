@@ -90,6 +90,35 @@
             </Config>
           </value>
         </entry>
+        <entry key="sys_log">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="SysLogDao" />
+              <option name="daoPackage" value="dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$/rabbitmq" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="SysLog" />
+              <option name="modelPackage" value="model" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$/rabbitmq" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="sys_log" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="id" />
+              <option name="projectFolder" value="$PROJECT_DIR$/rabbitmq" />
+              <option name="tableName" value="sys_log" />
+              <option name="useExample" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mapper" />
+              <option name="xmlTargetFolder" value="D:\workspace\SpringBoot01\rabbitmq" />
+            </Config>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="users">

@@ -53,6 +53,8 @@ public class RedService implements IRedService {
 
 
 
+
+
         RedDetail detail;
         for(Integer i:list)
         {

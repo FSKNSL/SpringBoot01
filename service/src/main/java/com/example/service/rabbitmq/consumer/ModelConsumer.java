@@ -83,7 +83,7 @@ public class ModelConsumer {
 
     /*这是第一个路由绑定的对应队列的消费者方法*/
     /*监听队列中的消息-directExchange-one*/
-    @RabbitListener(queues="${mq.direct.queue.one.name}",containerFactory = "singleListenerContainer")
+   /* @RabbitListener(queues="${mq.direct.queue.one.name}",containerFactory = "singleListenerContainer")
     public void consumeDirectMsgOne(@Payload byte[] msg)
     {
         try{
@@ -96,12 +96,12 @@ public class ModelConsumer {
             log.error("消费模型directExchange-one-消费者-发生异常:",e.fillInStackTrace());
         }
     }
-
+*/
 
     /*测试序列化字符串*/
     /*这是第二个路由绑定的对应队列的消费者方法*/
     /*监听队列中的消息-directExchange-one*/
-    @RabbitListener(queues="${mq.direct.queue.two.name}",containerFactory = "singleListenerContainer")
+    /*@RabbitListener(queues="${mq.direct.queue.two.name}",containerFactory = "singleListenerContainer")
     public void consumeDirectMsgTwo2(@Payload byte[] msg)
     {
         try{
@@ -113,10 +113,10 @@ public class ModelConsumer {
         {
             log.error("消费模型directExchange-two-消费者-发生异常:",e.fillInStackTrace());
         }
-    }
+    }*/
 
 
-    @RabbitListener(queues="${mq.direct.queue.one.name}",containerFactory = "singleListenerContainer")
+   /* @RabbitListener(queues="${mq.direct.queue.one.name}",containerFactory = "singleListenerContainer")
     public void consumeDirectMsgOne2(@Payload byte[] msg)
     {
         try{
@@ -128,12 +128,12 @@ public class ModelConsumer {
         {
             log.error("消费模型directExchange-one-消费者-发生异常:",e.fillInStackTrace());
         }
-    }
+    }*/
 
 
     /*这是第二个路由绑定的对应队列的消费者方法*/
     /*监听队列中的消息-directExchange-one*/
-    @RabbitListener(queues="${mq.direct.queue.two.name}",containerFactory = "singleListenerContainer")
+   /* @RabbitListener(queues="${mq.direct.queue.two.name}",containerFactory = "singleListenerContainer")
     public void consumeDirectMsgTwo(@Payload byte[] msg)
     {
         try{
@@ -145,7 +145,7 @@ public class ModelConsumer {
         {
             log.error("消费模型directExchange-two-消费者-发生异常:",e.fillInStackTrace());
         }
-    }
+    }*/
 
 
 

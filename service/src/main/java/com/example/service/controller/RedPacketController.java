@@ -1,10 +1,15 @@
 package com.example.service.controller;
 
 import com.example.service.dto.RedPacketDto;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageBuilder;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +30,16 @@ public class RedPacketController {
     /*注入红包业务逻辑处理接口服务*/
     @Autowired
     private IRedPacketService redPacketService;
+
+@Autowired
+private ObjectMapper objectMapper;
+@Autowired
+private RabbitTemplate rabbitTemplate;
+@Autowired
+private Environment env;
+
+
+
 
 
     /*发红包请求-请求方法为Post,请求参数采用JSON格式进行交互*/
@@ -70,7 +85,22 @@ public class RedPacketController {
                 response.setData(result);
             }else
             {
-                response=new BaseResponse(StatusCode.Fail.getCode(),"红包已被抢完!");
+                String message="红包已经被抢完";
+                try{
+                    response=new BaseResponse(StatusCode.Fail.getCode(),"红包已被抢完!");
+                    rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
+                    rabbitTemplate.setExchange(env.getProperty("mq.direct.exchange.name"));
+                    rabbitTemplate.setRoutingKey(env.getProperty("mq.direct.routing.key.two.name"));
+                    Message msg= MessageBuilder.withBody(message.getBytes("utf-8")).build();
+                    rabbitTemplate.convertAndSend(msg);
+                    log.info("基于消息模型DirectExchange抢红包-发送消息:{}",message);
+                }catch(Exception e)
+                {
+                    log.error("基于消息模型DirectExchange抢红包--发送消息发生异常:{}",message,e.fillInStackTrace());
+                }
+
+
+
             }
         }catch(Exception e)
         {

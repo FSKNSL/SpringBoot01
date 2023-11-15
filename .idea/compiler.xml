@@ -8,13 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="server" />
-        <module name="service" />
         <module name="api" />
+        <module name="rabbitmq" />
+        <module name="service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="rabbitmq" options="-parameters" />
       <module name="server" options="-parameters" />
       <module name="service" options="-parameters -bootclasspath &quot;$PROJECT_DIR$/../../Program Files/Java/jdk1.8.0_131/jre\lib\rt.jar;$PROJECT_DIR$/../../Program Files/Java/jdk1.8.0_131/jre\lib\jce.jar&quot; -Xlint:deprecation" />
     </option>
